@@ -8,7 +8,7 @@ import Ordersummary from '../../components/Burger/Ordersummary/OrderSummary'
 import axios from '../../axios-orders'
 import Spinner from '../../components/UI/Spinner/Spinner'
 import withErrorHandler from  '../../hoc/withErrorHandler/withErrorHandler'
-import *  as  burgerBuilderActions from '../../store/actions/index'
+import *  as  actions from '../../store/actions/index'
 
 
 
@@ -150,9 +150,10 @@ const mapStatetoProps = state =>{
 
 const mapPropstoState = dispatch => {
     return {
-        onIngredientAdded: (ingName) => dispatch(burgerBuilderActions.addIngredients(ingName)),
-        onIngredientRemove: (ingName) => dispatch(burgerBuilderActions.removeIngredients(ingName)),
-        onInitIngredients: () => dispatch(burgerBuilderActions.initIngredients())
+        onIngredientAdded: (ingName) => dispatch(actions.addIngredients(ingName)),
+        onIngredientRemove: (ingName) => dispatch(actions.removeIngredients(ingName)),
+        onInitIngredients: () => dispatch(actions.initIngredients()),
+        onInitPurchase: () => dispatch(actions.purchaseInit())
     }
 }
 
